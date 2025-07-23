@@ -1,22 +1,16 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.querySelector('.menu-icon');
+  const sidebar = document.querySelector('.sidebar');
+  const closeIcon = document.querySelector('.close-icon');
 
-// Sidebar elements //
-const sideBar = document.querySelector('.sidebar');
-const menu = document.querySelector('.menu-icon');
-const closeIcon = document.querySelector('.close-icon')
-
-
-const hoverSign = document.querySelector('.hover-sign');
-
-
-
-// Sidebar elements //
-menu.addEventListener("click", function(){
-    sideBar.classList.remove("close-sidebar")
-    sideBar.classList.add("open-sidebar")
+  if(menuIcon && sidebar && closeIcon) {
+    menuIcon.addEventListener('click', function() {
+      sidebar.classList.add('open-sidebar');
+      sidebar.classList.remove('close-sidebar');
+    });
+    closeIcon.addEventListener('click', function() {
+      sidebar.classList.remove('open-sidebar');
+      sidebar.classList.add('close-sidebar');
+    });
+  }
 });
-
-closeIcon.addEventListener("click", function(){
-    sideBar.classList.remove("open-sidebar");
-    sideBar.classList.add("close-sidebar");
-    
-})
